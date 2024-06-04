@@ -43,14 +43,43 @@ body {
 }
 
 #about .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     max-width: 1000px;
     margin: auto;
     text-align: left;
+    padding: 40px 0;
 }
 
-.description {
-    font-size: 18px;
-    margin-bottom: 40px;
+.text-left,
+.text-right {
+    width: 45%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.image-left,
+.image-right {
+    width: 45%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.image-left img,
+.image-right img {
+    max-width: 100%;
+    border-radius: 10px;
 }
 
 #contact .content {
@@ -100,4 +129,32 @@ body {
     to {
         opacity: 1;
     }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-left,
+.text-right,
+.image-left,
+.image-right {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.section.in-view .text-left,
+.section.in-view .text-right,
+.section.in-view .image-left,
+.section.in-view .image-right {
+    opacity: 1;
+    transform: translateY(0);
 }
