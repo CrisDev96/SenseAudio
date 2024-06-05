@@ -1,3 +1,4 @@
+//Agregando un listener
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.section');
     
